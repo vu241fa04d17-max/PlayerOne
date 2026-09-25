@@ -1,0 +1,180 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.bento-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto auto;
+    gap: 1.5rem;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.bento-item {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.1);
+    border-color: #58a6ff;
+}
+
+h1, h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.big-text {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #58a6ff;
+}
+
+/* Specific Items */
+.profile {
+    grid-column: span 2;
+    grid-row: span 2;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(145deg, #161b22, #1c2128);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #58a6ff, #1f6feb);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.3);
+}
+
+.status {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(46, 160, 67, 0.15);
+    color: #3fb950;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+.rank {
+    align-items: center;
+    text-align: center;
+}
+
+.rank-icon {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #d2a8ff;
+    margin-top: 1rem;
+    text-shadow: 0 0 15px rgba(210, 168, 255, 0.4);
+}
+
+.hours {
+    align-items: center;
+    text-align: center;
+}
+
+.recent-games {
+    grid-column: span 2;
+}
+
+.games-list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.game {
+    background: #21262d;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #30363d;
+}
+
+.trophies {
+    grid-row: span 2;
+}
+
+.trophies ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.trophies li {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #30363d;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.trophies li:last-child {
+    border-bottom: none;
+}
+
+.friends {
+    grid-column: span 2;
+}
+
+.friends-avatars {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.f-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #161b22;
+    margin-left: -10px;
+}
+.f-avatar:first-child {
+    margin-left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bento-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile, .recent-games, .friends {
+        grid-column: span 1;
+    }
+    
+    .profile, .trophies {
+        grid-row: span 1;
+    }
+    
+    .games-list {
+        flex-direction: column;
+    }
+}
